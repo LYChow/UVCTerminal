@@ -1,0 +1,6 @@
+framework module Pods_SWUVCTerminal {
+  umbrella header "Pods-SWUVCTerminal-umbrella.h"
+
+  export *
+  module * { export * }
+}

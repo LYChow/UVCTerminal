@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SWAboutVC">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aboutDetail" translatesAutoresizingMaskIntoConstraints="NO" id="jwt-ih-qJ9">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="153" id="Cdz-o8-vCn"/>
+                        <constraint firstAttribute="height" constant="196" id="ouc-zO-XCf"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京华盛普讯科技有限公司" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8u-Uc-BmI">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="4Wc-nn-RyO"/>
+                        <constraint firstAttribute="width" constant="195" id="kc0-kT-8cx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="网站:http://www.uvcom.cn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZh-5s-8hi">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="195" id="LZ3-vR-piv"/>
+                        <constraint firstAttribute="height" constant="21" id="iba-2L-i21"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电话:010-57791600" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aar-Jx-Slr">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="195" id="Ute-6g-Ygo"/>
+                        <constraint firstAttribute="height" constant="21" id="hnY-LK-Y5z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="官方微信:UVCPXKJ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vsg-Dc-yuZ">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="47s-gb-TVu"/>
+                        <constraint firstAttribute="width" constant="187" id="mvN-d5-PCx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Vsg-Dc-yuZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-4" id="1r0-KD-ehm"/>
+                <constraint firstItem="h8u-Uc-BmI" firstAttribute="top" secondItem="Vsg-Dc-yuZ" secondAttribute="bottom" constant="1" id="6c7-gf-ymO"/>
+                <constraint firstItem="hZh-5s-8hi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Em0-Gp-FVO"/>
+                <constraint firstAttribute="bottom" secondItem="Aar-Jx-Slr" secondAttribute="bottom" constant="6" id="IaF-lb-uJ9"/>
+                <constraint firstItem="Aar-Jx-Slr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JXd-K8-HKh"/>
+                <constraint firstItem="h8u-Uc-BmI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MQV-C7-tW3"/>
+                <constraint firstItem="jwt-ih-qJ9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="SfM-Ox-yMp"/>
+                <constraint firstItem="jwt-ih-qJ9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="edJ-DU-78u"/>
+                <constraint firstItem="Aar-Jx-Slr" firstAttribute="top" secondItem="hZh-5s-8hi" secondAttribute="bottom" constant="1" id="j9I-Lo-yUO"/>
+                <constraint firstItem="hZh-5s-8hi" firstAttribute="top" secondItem="h8u-Uc-BmI" secondAttribute="bottom" id="xhQ-si-ne9"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="aboutDetail" width="103" height="132"/>
+    </resources>
+</document>

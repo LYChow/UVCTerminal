@@ -1,0 +1,25 @@
+PODS:
+  - Crashlytics (3.8.2):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.8)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+
+DEPENDENCIES:
+  - Crashlytics
+  - Fabric
+  - ReactiveCocoa (~> 2.5)
+
+SPEC CHECKSUMS:
+  Crashlytics: 27acca95a01b042a8294291dd6dff27f8f6af6d7
+  Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+
+PODFILE CHECKSUM: f13a463124aec6933afdfc5014ffabcd37df34bb
+
+COCOAPODS: 1.0.1
