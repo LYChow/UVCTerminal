@@ -8,6 +8,7 @@
 
 #include "SWAppDemo.h"
 #include "ISWApi.h"
+#include "ISWCall.h"
 #import "SWCommunicationVC.h"
 #import "SWTalkBackVC.h"
 #include "SWLoginViewController.h"
@@ -16,8 +17,9 @@
 #import "AppDelegate.h"
 
 #import "SWNavigationController.h"
-
+#import "SWTerminal.h"
 #import "UIApplication+topmostViewController.h"
+#import "SWUser.h"
 /*
 static POSTHREAD g_tthread=0;
 long __stdcall MyThreadProc(void* pUserData)
@@ -53,13 +55,15 @@ const char* ToCStr(NSString* str)
 SWAppDemo::SWAppDemo()
 {
 	callView=nil;
+    reconnectTipsView=nil;
 	LoginView=nil;
 	MsgBox=nil;
+    terminalList =[NSMutableArray array];
+    chairmanList =[NSMutableArray array];
     _pApi=CreateSWApi(this);
     _pUA=_pApi->CreateUA(this);
 	_msgTimeout=3;
-
-	//TRACE("---输出汉字\n");
+    
 }
 SWAppDemo::~SWAppDemo()
 {
@@ -95,7 +99,6 @@ int SWAppDemo::Init(void* pViedoView)
 	ACap=_pApi->GetAudioCapturer(0);
 	ASender=_pApi->GetNetAudioSender();
 	AReceiver=_pApi->GetNetAudioReceiver();
-
 	return  0;
 }
 
@@ -111,11 +114,6 @@ int SWAppDemo::InitAudio()
 //extern LPCTSTR ESLoginRet(int);
 void SWAppDemo::OnUALogin(ISWUA* pua,int ret)
 {
-	
-
-    
-    
-    
     if(LoginView)
 	{
 		[LoginView OnLogin:ret];
@@ -127,35 +125,57 @@ void SWAppDemo::OnUALogin(ISWUA* pua,int ret)
 //        [[NSNotificationCenter defaultCenter]postNotificationName:SWOnLoginNotification object:@{@"ret":[NSNumber numberWithInt:ret]}];
 //    }
     
-
 };
 void SWAppDemo::OnUAStateChange(ISWUA* pua,int state)
 {
 	_UAState=state;
+    if (_UAState==UA_ReConnect)
+    {
+        if (!reconnectTipsView) {
+            reconnectTipsView = [[UILabel alloc] initWithFrame:CGRectMake((SWScreenWidth-240)/2, (SWScreenHeight-30)/2, 240, 30)];
+            reconnectTipsView.text=@"请检查网络连接是否正确!";
+            reconnectTipsView.backgroundColor = [UIColor blackColor];
+            reconnectTipsView.alpha=0.3;
+            reconnectTipsView.textColor=[UIColor whiteColor];
+            reconnectTipsView.textAlignment=NSTextAlignmentCenter;
+        }
+        UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
+        [window addSubview:reconnectTipsView];
+    }
+    else
+    {
+        if (reconnectTipsView) {
+            [reconnectTipsView removeFromSuperview];
+        }
+    }
 };
 void SWAppDemo::OnUACall(ISWUA* pua,ISWCall* pCall,int msg,long info)
 {
-    
-    //如果当前界面为语音对讲,视频通话界面,不做处理
     UIViewController *viewController = [UIApplication topmostViewController];
-    if ([viewController isMemberOfClass:[SWCommunicationVC class]]) return;
+    //如果正在通讯界面,获取对方的call,直接拒绝
+    if ([viewController isMemberOfClass:[SWCommunicationVC class]])
+    {
+    pCall->Reject(0);
+    }
+    else
+    {
+        //收到onCall消息,不存在就创建一个,退出callView界面时将SWAppDemo中的变量置为nil,如果存在退出时置为nil
+        if (callView==nil) {
+            callView = [[SWTalkBackVC alloc] init];
+            callView.peerTerminalName =[NSString stringWithUTF8String:pCall->GetPeer()->Name()];
+            
+            if (viewController.navigationController) {
+                [viewController.navigationController pushViewController:callView animated:YES];
+            }
+            else
+            {
+                [viewController presentViewController:[[SWNavigationController alloc] initWithRootViewController:callView] animated:YES completion:nil];
+            }
+        }
+    }
     
     
-    //收到onCall消息,不存在就创建一个,退出callView界面时将SWAppDemo中的变量置为nil,如果存在退出时置为nil
-    if (callView==nil) {
-        callView = [[SWTalkBackVC alloc] init];
-        callView.peerTerminalName =[NSString stringWithUTF8String:pCall->GetPeer()->Name()];
-        
-        
-        if (viewController.navigationController) {
-            [viewController.navigationController pushViewController:callView animated:YES];
-        }
-        else
-        {
-            [viewController presentViewController:[[SWNavigationController alloc] initWithRootViewController:callView] animated:YES completion:nil];
-        }
-        
-	}
+
 	int type=pCall->GetType();
 	//this demo only process VideoTalkCall
 	if (type!=CallType_VideoTalk) {
@@ -174,9 +194,12 @@ void SWAppDemo::OnUACall(ISWUA* pua,ISWCall* pCall,int msg,long info)
 				PlaySound(TONE_RING);
 //show confirm UI,wait user accept or reject
 #if 1
+                //通讯界面时不作处理
+                if (![viewController isMemberOfClass:[SWCommunicationVC class]])
+                {
 			//play alert tone
 				ShowConfirmBox("Do you accept this call?");
-
+                }
 //auto accept incomming call
 #else
 			//show term video
@@ -259,11 +282,64 @@ void SWAppDemo::OnUARecvTerminalCommand(ISWUA* pua,ITerminal* pTerm,int cmd,int 
 void SWAppDemo::OnUATerminalInfoUpdate(ISWUA* pua,ITerminal* pTerm,DWORD dwUpdateFlag)
 {
     int  terminalCount =GetApp().GetUA()->GetTerminalCount();
-//    for (int i=0; i<terminalCount; i++) {
-//        //获取终端信息
-//        ITerminal* terminal = GetApp().GetUA()->GetTerminal(i);
-//        printf("terminal:%i %s\t%s\t%s\t%s\t%s\t%%s\t%s\t%s\t%s\t%s\t%s\t%s\t%u\t%u\t%u\t \n",i,terminal->Name(),terminal->Aliase(),terminal->FriendlyName(),terminal->Department(),terminal->Domain(),terminal->IPAddress(),terminal->PhoneNumber(),terminal->Chairman(),terminal->ConfInfo(),terminal->BandInfo(),terminal->UserPtr(),terminal->Type(),terminal->Level(),terminal->Grant(),terminal->GetNetId());
-//    }
+    
+    [terminalList removeAllObjects];
+    [chairmanList removeAllObjects];
+    for (int i=0; i<terminalCount; i++) {
+        //获取终端信息
+        
+        String strName;
+        String strNameAliase;
+        String strNameFriendly;
+        String strPhoneNumber;
+        String strDomain;
+        String strDepartment;
+        String strChairman;
+        String strMessage;
+        String strConfInfo;//会议信息
+        String strBandInfo;
+        String strBandOwner;
+        String strUserData1;
+        String strUserData2;
+        
+        
+        VC3Terminal *v;
+        VC3Terminal* terminal =(VC3Terminal*)GetApp().GetUA()->GetTerminal(i);
+        SWTerminal *model =[[SWTerminal alloc] init];
+        model.name = [NSString stringWithCString:terminal->Name() encoding:NSUTF8StringEncoding];
+        model.aliase = [NSString stringWithCString:terminal->Aliase() encoding:NSUTF8StringEncoding];
+        model.friendlyName = [NSString stringWithCString:terminal->FriendlyName() encoding:NSUTF8StringEncoding];
+        model.department = [NSString stringWithCString:terminal->Department() encoding:NSUTF8StringEncoding];
+        model.domain= [NSString stringWithCString:terminal->Domain() encoding:NSUTF8StringEncoding];
+        model.ipAddress= [NSString stringWithCString:terminal->IPAddress() encoding:NSUTF8StringEncoding];
+        model.phoneNumber= [NSString stringWithCString:terminal->PhoneNumber() encoding:NSUTF8StringEncoding];
+        model.confInfo= [NSString stringWithCString:terminal->ConfInfo() encoding:NSUTF8StringEncoding];
+        model.bandInfo= [NSString stringWithCString:terminal->BandInfo() encoding:NSUTF8StringEncoding];
+//        model.userPtr= [NSString stringWithCString:terminal->Name() encoding:NSUTF8StringEncoding];
+        model.type = [NSNumber numberWithUnsignedInt:terminal->Type()];
+        model.level = [NSNumber numberWithUnsignedInt:terminal->Level()];
+        model.grant= [NSNumber numberWithUnsignedInt:terminal->Grant()];
+        model.netId= [NSNumber numberWithUnsignedInt:terminal->GetNetId()];
+        //判断chairman是否为空
+        //1.不为空认为是会议主席,添加到会议主席列表中
+        //2.为空时把type=2(指挥/会议终端)和type=3(监控前端)的,加入到对讲列表中,过滤当前正在登录的用户
+        
+        if (terminal->Chairman()) {
+            if (model.name.length) [chairmanList addObject:model]; //监听数组的变化去刷新列表
+        }
+        else
+        {
+            //获取当前登录的用户
+            SWUser *user =[SWUser user];
+            
+            if ([model.type integerValue]==2 || [model.type integerValue]==3) {
+                if (![model.name isEqualToString:user.userName] && model.name.length) {
+                    [terminalList addObject:model]; 
+                }
+                
+            }
+        }
+    }
 };
 void SWAppDemo::OnUAMessage(ISWUA* pua,int msg,int iParam,long lParam)
 {
@@ -329,7 +405,7 @@ int SWAppDemo::StopTalk()
 {
 	StopPlaySound();
 	ISWCall* pCall=_pUA->GetCall(0);
-	//if (pCall->GetState()==CallState_Connect)
+	if (pCall->GetState()==CallState_Connect)
 	{
 		CloseTerminalMedia(3, 0);
 	}

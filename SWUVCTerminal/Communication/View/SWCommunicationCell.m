@@ -19,15 +19,17 @@
 -(void)setTerminalModel:(SWTerminal *)terminalModel
 {
     self.teminalNameLabel.text=terminalModel.name;
-    if ([terminalModel.type isEqualToString:@"1"])
+    
+    //2 	指挥/会议终端
+    //3 	监控前端
+    unsigned int type = [terminalModel.type unsignedIntValue];
+    if (type == 2)
     {
-        self.terminalTypeImage.image=[UIImage imageNamed:@"user"];
-    }else if ([terminalModel.type isEqualToString:@"2"])
+    self.terminalTypeImage.image=[UIImage imageNamed:@"user"];
+    }
+    else if(type == 3)
     {
     self.terminalTypeImage.image=[UIImage imageNamed:@"monitor"];
-    }else if ([terminalModel.type isEqualToString:@"3"])
-    {
-     self.terminalTypeImage.image=[UIImage imageNamed:@"monitor"];
     }
 }
 

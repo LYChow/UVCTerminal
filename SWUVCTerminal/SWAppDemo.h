@@ -61,7 +61,10 @@ struct SWAppDemo:public ISWUAEventHandler,public ISWApiEventHandler
 
     SWLoginViewController* LoginView;
     SWTalkBackVC* callView;
+    UILabel *reconnectTipsView;
 	UIAlertController* MsgBox;
+    NSMutableArray *terminalList;
+    NSMutableArray *chairmanList;
 	int _msgTimeout;
 	int _UAState;
 

@@ -6,6 +6,49 @@
 //  Copyright © 2016 sinowave. All rights reserved.
 //
 
+/*
+ ***********终端类型定义**************
+ 终端类型编码	终端类型名称
+ 0 	正在参会的指挥/会议终端
+ 2 	指挥/会议终端
+ 3 	监控前端
+ 4 	浏览用户
+ 5 	网络视频矩阵
+ 6 	多分屏解码器
+ 7 	多画面合成器
+ 27 	设备代理服务器/接入网关
+ 28 	报警服务器
+ 29 	视频转发服务器
+ 30 	录像服务器
+ 255 	控制台
+ 
+ 
+ 
+ ************终端子类型定义****************
+ 终端类型编码	终端子类型编码	终端子类型名称
+ 3	10	VGA采集卡监控前端
+ 3	11	视频采集卡监控前端
+ 
+ 2	0	标准指挥终端（硬件）
+ 2	1	会议终端(USB)
+ 2	2	简化会议终端（旁听）
+ 2	3	会议终端（软件、网采）
+ 2	4	指挥终端（软件、网采）
+ 2	5	H323网关终端
+ 2	6	SIP可视电话虚拟会议终端（接入坐席）
+ 2	7	废弃
+ 2	8	指挥(网采透传)子类型
+ 2	9	安卓双向终端
+ 2	10	公共服务坐席
+ 
+ 6	6	网关坐席
+ 
+ 29	0	标准VS
+ 29	12	VS阵列中的VS
+ */
+
+
+
 #import "SWTerminalListVC.h"
 #import "SWCommunicationCell.h"
 #import "SWCommunicationVC.h"
@@ -14,6 +57,7 @@
 #import "BMChineseSort.h"
 #import "SWTerminal.h"
 #import "UIImage+resizableImage.h"
+#import "SWAppDemo.h"
 #define SWCellIdentifier @"SWCellIdentifier"
 @interface SWTerminalListVC ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 
@@ -21,6 +65,7 @@
 
 @property(nonatomic,strong)UITableView *communicationTableView;
 @property(nonatomic,strong)UIView *searchBarView;
+@property(nonatomic,copy) NSString *keyWordString;
 
 @property(nonatomic,strong) NSMutableArray *totalArray; //存放所有的terminal对象
 @property(nonatomic,strong) NSArray *indexArray;  //索引数组
@@ -35,6 +80,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpNavTheme];
+    
+
     [self loadDataFiterWithKeyWord:nil];
 
     [self.view addSubview:self.searchBarView];
@@ -45,31 +92,42 @@
 //simulation request MVS Server Data
 -(void)loadDataFiterWithKeyWord:(NSString *)keyWord
 {
-    NSArray *requestArray = [NSArray arrayWithObjects:@{@"name":@"zly1",@"ipAddress":@"192.168.2.112",@"type":@"1"}, @{@"name":@"廊坊市文化路",@"ipAddress":@"211.99.241.243",@"type":@"2"},@{@"name":@"zly",@"ipAddress":@"192.168.2.112",@"type":@"1"},@{@"name":@"xf",@"ipAddress":@"192.168.2.112",@"type":@"2"},@{@"name":@"WFF",@"ipAddress":@"192.168.2.112",@"type":@"1"},@{@"name":@"fwy3",@"ipAddress":@"192.168.2.112",@"type":@"1"},@{@"name":@"Vivo9528_v5",@"ipAddress":@"192.168.2.112",@"type":@"2"},@{@"name":@"lc292112",@"ipAddress":@"192.168.2.112",@"type":@"1"},@{@"name":@"wyq",@"ipAddress":@"211.99.241.243",@"type":@"2"},@{@"name":@"Smart022",@"ipAddress":@"192.168.2.112",@"type":@"1"},@{@"name":@"fwy5",@"ipAddress":@"192.168.2.112",@"type":@"2"},nil];
-
-    
-    [self.totalArray removeAllObjects];
-    for (int i = 0; i<requestArray.count; i++) {
-        SWTerminal *terminal = [[SWTerminal alloc] init];
-        
-        NSDictionary *terminalInfo =[requestArray objectAtIndex:i];
-        terminal.name = [terminalInfo objectForKey:@"name"];
-        terminal.ipAddress= [terminalInfo objectForKey:@"ipAddress"];
-        terminal.type = [terminalInfo objectForKey:@"type"];
-        [self.totalArray addObject:terminal];
-        
+    if (_communicationType==SWMeetingCommunicationType) {
+        self.totalArray = [NSMutableArray arrayWithArray:GetApp().chairmanList];
+    }
+    else
+    {
+    self.totalArray = [NSMutableArray arrayWithArray:GetApp().terminalList];
     }
     
+  
+    //获取终端的列表
     if (keyWord.length) {
-       //predicate key pharse
+        //predicate key pharse
         NSPredicate *predicate =[NSPredicate predicateWithFormat:@"name CONTAINS %@",keyWord];
-       [self.totalArray filterUsingPredicate:predicate];
+        [self.totalArray filterUsingPredicate:predicate];
     }
-    
     self.indexArray = [BMChineseSort IndexWithArray:self.totalArray Key:@"name"];
     self.letterResultArray = [BMChineseSort sortObjectArray:self.totalArray Key:@"name"];
-    
     [self.communicationTableView reloadData];
+    
+    
+//    for (int i=0; i<self.totalArray.count; i++) {
+//        SWTerminal *model =[self.totalArray objectAtIndex:i];
+//        SWLog(@"_____________________name :%@",model.name);
+//    }
+//    NSArray *requestArray = [NSArray arrayWithObjects:@{@"name":@"zly1",@"ipAddress":@"192.168.2.112",@"type":@"1"}, @{@"name":@"廊坊市文化路",@"ipAddress":@"211.99.241.243",@"type":@"2"},@{@"name":@"zly",@"ipAddress":@"192.168.2.112",@"type":@"1"},@{@"name":@"xf",@"ipAddress":@"192.168.2.112",@"type":@"2"},@{@"name":@"WFF",@"ipAddress":@"192.168.2.112",@"type":@"1"},@{@"name":@"fwy3",@"ipAddress":@"192.168.2.112",@"type":@"1"},@{@"name":@"Vivo9528_v5",@"ipAddress":@"192.168.2.112",@"type":@"2"},@{@"name":@"lc292112",@"ipAddress":@"192.168.2.112",@"type":@"1"},@{@"name":@"wyq",@"ipAddress":@"211.99.241.243",@"type":@"2"},@{@"name":@"Smart022",@"ipAddress":@"192.168.2.112",@"type":@"1"},@{@"name":@"fwy5",@"ipAddress":@"192.168.2.112",@"type":@"2"},nil];
+//    [self.totalArray removeAllObjects];
+//    for (int i = 0; i<requestArray.count; i++) {
+//        SWTerminal *terminal = [[SWTerminal alloc] init];
+//        
+//        NSDictionary *terminalInfo =[requestArray objectAtIndex:i];
+//        terminal.name = [terminalInfo objectForKey:@"name"];
+//        terminal.ipAddress= [terminalInfo objectForKey:@"ipAddress"];
+//        terminal.type = [terminalInfo objectForKey:@"type"];
+//        [self.totalArray addObject:terminal];
+//    }
+ 
 }
 
 
@@ -97,6 +155,8 @@
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUD];
+            //模拟网络加载,把获取的最新的终端列表进行刷新显示
+             [self loadDataFiterWithKeyWord:self.keyWordString];
         });
     }];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:refreshButton];
@@ -107,7 +167,8 @@
 #pragma mark -UISearchBarDelegate
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    [self loadDataFiterWithKeyWord:searchText];
+    self.keyWordString = searchText;
+    [self loadDataFiterWithKeyWord:self.keyWordString];
 }
 
 #pragma mark -UITableViewDataSource
@@ -161,29 +222,37 @@
 {
     SWTerminal *terminalModel =[[self.letterResultArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
-    
-    if ([terminalModel.type isEqualToString:@"1"])
+    //0 	正在参会的指挥/会议终端
+    //2 	指挥/会议终端
+    //3 	监控前端
+    if(_communicationType==SWMeetingCommunicationType)
     {
-        //SWTalkBackCommunicationType
-        SWTerminal *terminal =[[self.letterResultArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-        SWTalkBackVC *talkBackVC =[[SWTalkBackVC alloc] init];
-        talkBackVC.peerTerminalName=terminal.name;
-        [self.navigationController pushViewController:talkBackVC animated:YES];
-    }else if ([terminalModel.type isEqualToString:@"2"])
-    {
-        //SWMonitorCommunicationType
-        SWCommunicationVC *communicationVC =[[SWCommunicationVC alloc] init];
-        communicationVC.mainViewType=SWVideoMainViewType;
-        communicationVC.videoType=SWMonitorVideoType;
-        
-        [self presentViewController:communicationVC animated:NO completion:nil];
-
-    }else if ([terminalModel.type isEqualToString:@"3"])
-    {
-        //SWMeetingCommunicationType
         SWJoinMeetingVC *joinMeetingVC = [[SWJoinMeetingVC alloc] init];
         [self.navigationController pushViewController:joinMeetingVC animated:YES];
     }
+    else
+    {
+        unsigned int type = [terminalModel.type unsignedIntValue];
+        if (type ==2)
+        {
+            SWTalkBackVC *talkBackVC =[[SWTalkBackVC alloc] init];
+            talkBackVC.peerTerminalName=terminalModel.name;
+            [self.navigationController pushViewController:talkBackVC animated:YES];
+        }else if (type ==3)
+        {
+            //SWMonitorCommunicationType
+            SWCommunicationVC *communicationVC =[[SWCommunicationVC alloc] init];
+            communicationVC.mainViewType=SWVideoMainViewType;
+            communicationVC.videoType=SWMonitorVideoType;
+            
+            [self presentViewController:communicationVC animated:NO completion:nil];
+            
+        }
+    }
+    
+
+    
+
 }
 
 #pragma mark -custom Delegate
@@ -270,11 +339,11 @@
     return _searchBarView;
 }
 
--(NSMutableArray *)totalArray
-{
-    if (!_totalArray) {
-        _totalArray = [NSMutableArray array];
-    }
-    return _totalArray;
-}
+//-(NSMutableArray *)totalArray
+//{
+//    if (!_totalArray) {
+//        _totalArray = [NSMutableArray array];
+//    }
+//    return _totalArray;
+//}
 @end

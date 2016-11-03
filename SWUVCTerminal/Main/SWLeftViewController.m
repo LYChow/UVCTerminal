@@ -164,7 +164,7 @@
         
         SWLoginViewController *loginVC = [[SWLoginViewController alloc] init];
         loginVC.isAutoLogin=NO;
-        AppDelegate *app=[UIApplication sharedApplication].delegate;
+        AppDelegate *app=(AppDelegate *)[UIApplication sharedApplication].delegate;
         [app.window.rootViewController presentViewController:loginVC animated:YES completion:nil];
     }
 }

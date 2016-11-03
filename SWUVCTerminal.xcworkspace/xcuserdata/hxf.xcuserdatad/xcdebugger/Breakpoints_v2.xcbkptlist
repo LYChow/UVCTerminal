@@ -4,28 +4,18 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            scope = "0"
-            stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SWUVCTerminal/Communication/ViewController/SWTalkBackVC.m"
-            timestampString = "496831607.958324"
+            filePath = "SDK/SWUA/SWUA.cpp"
+            timestampString = "499684334.880946"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "-ShowConfirmBox:withBtn1Text:andBtn2Text:andTitle:"
+            startingLineNumber = "985"
+            endingLineNumber = "985"
+            landmarkName = "SWUA::CreateAVTransmission(int type,LPCTSTR szTerminalSrc,LPCTSTR szTerminalDst)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -35,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SWUVCTerminal/Communication/ViewController/SWTalkBackVC.m"
-            timestampString = "496831609.350447"
+            filePath = "SWUVCTerminal/SWAppDemo.mm"
+            timestampString = "499686594.369603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "-ShowConfirmBox:withBtn1Text:andBtn2Text:andTitle:"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
+            landmarkName = "SWAppDemo::OnUATerminalInfoUpdate(ISWUA* pua,ITerminal* pTerm,DWORD dwUpdateFlag)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SWUVCTerminal/SWAppDemo.mm"
+            timestampString = "499686683.051038"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
+            landmarkName = "SWAppDemo::OnUATerminalInfoUpdate(ISWUA* pua,ITerminal* pTerm,DWORD dwUpdateFlag)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

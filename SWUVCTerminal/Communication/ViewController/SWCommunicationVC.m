@@ -14,7 +14,7 @@
 #import "SWPTZControlView.h"
 #import "SWFileManager.h"
 
-#define SWDelayInterval 10
+#define SWDelayDisappearInterval 10
 @interface SWCommunicationVC ()<SWSettingWheelDelegate,SWPTZControlViewDelegate>
 {
     UIInterfaceOrientation _interfaceOrientation; //记录方向的改变
@@ -173,6 +173,11 @@
 #pragma mark -SWPTZControlViewDelegate
 -(void)callBackPtzControllEventType:(SWPTZControlType)eventType
 {
+#warning 获取终端对象进行调用,能够查看监控时使用
+//    ITerminal* p;
+//    IPTZControl *ptzControl =SWUA->GetPTZControl(p);
+//    ptzControl->Move(0);
+    
     //0=stop,1=left,2=up,3=right,4=down
     switch (eventType) {
         case 1:
@@ -213,9 +218,7 @@
     }
     else if ([title isEqualToString:SWCaptureImage])
     {
-        
         [SWFileManager saveSnapShots:self.view];
-        
     }
     else if ([title isEqualToString:SWPopSetting])
     {
@@ -272,7 +275,7 @@ static int voiceCallIndex =  0 ;
 {
     delayTimer = timer;
     voiceCallIndex ++;
-    if (voiceCallIndex>SWDelayInterval) {
+    if (voiceCallIndex>SWDelayDisappearInterval) {
         self.settingWheel.hidden=YES;
         self.voiceMuteButton.hidden=YES;
         self.voiceHandUpButton.hidden=YES;
@@ -313,7 +316,7 @@ static int videoChatIndex =  0 ;
     delayTimer = timer;
     videoChatIndex ++;
 
-    if (videoChatIndex>SWDelayInterval) {
+    if (videoChatIndex>SWDelayDisappearInterval) {
         self.settingWheel.hidden=YES;
         self.videoMuteButton.hidden=YES;
         self.videoHandUpButton.hidden=YES;
@@ -349,7 +352,7 @@ static int monitorIndex =  0 ;
 
     delayTimer = timer;
      monitorIndex ++;
-     if (monitorIndex>SWDelayInterval) {
+     if (monitorIndex>SWDelayDisappearInterval) {
         self.settingWheel.hidden=YES;
         self.ptzControlButton.hidden=YES;
         self.stopWatchButton.hidden=YES;
@@ -417,7 +420,7 @@ static int monitorIndex =  0 ;
             [_mainView addSubview:self.voiceCallView];
             
             //10s后隐藏
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(SWDelayInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(SWDelayDisappearInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self touchForVoiceCallView:nil];
             });
             
@@ -432,7 +435,7 @@ static int monitorIndex =  0 ;
              [_mainView addSubview:self.monitorView];
                 
                 //10s后隐藏
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(SWDelayInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(SWDelayDisappearInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self touchForMonitorView:nil];
                 });
             }
@@ -441,7 +444,7 @@ static int monitorIndex =  0 ;
              [_mainView addSubview:self.videoChatView];
                 
                 //10s后隐藏
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(SWDelayInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(SWDelayDisappearInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self touchForVideoChatView:nil];
                 });
             }

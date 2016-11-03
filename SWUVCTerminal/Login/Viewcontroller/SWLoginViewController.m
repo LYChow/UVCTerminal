@@ -55,6 +55,7 @@
     self.serverAddressTextField.text=user.ipAddress;
     
     [self.view addSubview:self.passcodeTextField];
+    self.passcodeTextField.text=user.password;
     
     [self.view addSubview:self.rememberPasscodeButton];
     [self.view addSubview:self.rememberPasscodeLabel];
@@ -183,7 +184,7 @@
 {
      [MBProgressHUD hideHUDForView:self.view];
     
-    
+    SWLog(@"ret=%i",ret);
     /*
      LoginConnectFail = -4,
      LoginGetRegInfoFail,

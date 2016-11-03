@@ -17,13 +17,14 @@
 @property(nonatomic,copy) NSString *domain;
 @property(nonatomic,copy) NSString *ipAddress;
 @property(nonatomic,copy) NSString *phoneNumber;
-@property(nonatomic,copy) NSObject *chairman;
+@property(nonatomic,copy) SWTerminal *chairman;
 @property(nonatomic,copy) NSString *confInfo;
 @property(nonatomic,copy) NSString *bandInfo;
 @property(nonatomic,copy) NSObject *userPtr;
-@property(nonatomic,copy) NSString *type;
-@property(nonatomic,copy) NSNumber *level;
-@property(nonatomic,copy) NSNumber *grant;
-@property(nonatomic,copy) NSNumber *netId;
-
+@property(nonatomic,strong) NSNumber *dispOrder;
+@property(nonatomic,strong) NSNumber *type;
+@property(nonatomic,strong) NSNumber *level;
+@property(nonatomic,strong) NSNumber *grant;
+@property(nonatomic,strong) NSNumber *state;
+@property(nonatomic,strong) NSNumber *netId;
 @end

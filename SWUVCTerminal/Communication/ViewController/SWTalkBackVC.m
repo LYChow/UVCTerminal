@@ -31,15 +31,16 @@
 
 #pragma mark -life cycle
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    GetApp().InitAudio();
     
+    GetApp().InitAudio();
     SWApi=GetApp().GetApi();
     SWUA=GetApp().GetUA();
-    
     //保存实例到GetApp,用来调用call && oncall的消息
     GetApp().SetTalkBackView(self);
+    
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.title=@"对讲";
@@ -99,31 +100,33 @@
 {
     InfoBoxType=1; //收到呼叫
 
-    if ([[SWSetting setting].isAutoAccept boolValue])
-    {
-        SWCommunicationVC *communicationVC =[[SWCommunicationVC alloc] init];
-        communicationVC.mainViewType=SWVideoMainViewType;
-        communicationVC.videoType=SWChatVideoType;
-        
-        communicationVC.handUpSignal=[RACSubject subject];
-        [communicationVC.handUpSignal subscribeNext:^(id x) {
-            if ([x isEqualToString:SWVideoHandUp])
-            {
-                //挂断视频通话
-                [self OnBtnStopTalk];
-            }
-            else if ([x isEqualToString:SWVoiceHandUp])
-            {
-                //挂断语音对讲
-                [self OnBtnStopAudio];
-            }
-        }];
-        [self presentViewController:communicationVC animated:NO completion:nil];
-        [self OnEndInfoBox:0]; //接受对方呼叫
-    }
-    else
-    {
+//    if ([[SWSetting setting].isAutoAccept boolValue])
+//    {
+//        SWCommunicationVC *communicationVC =[[SWCommunicationVC alloc] init];
+//        communicationVC.mainViewType=SWVideoMainViewType;
+//        communicationVC.videoType=SWChatVideoType;
+//        
+//        communicationVC.handUpSignal=[RACSubject subject];
+//        [communicationVC.handUpSignal subscribeNext:^(id x) {
+//            if ([x isEqualToString:SWVideoHandUp])
+//            {
+//                //挂断视频通话
+//                [self OnBtnStopTalk];
+//            }
+//            else if ([x isEqualToString:SWVoiceHandUp])
+//            {
+//                //挂断语音对讲
+//                [self OnBtnStopAudio];
+//            }
+//        }];
+//        [self presentViewController:communicationVC animated:NO completion:nil];
+//        [self OnEndInfoBox:0]; //接受对方呼叫
+//    }
+//    else
+//    {
         NSString *onMessageName =[NSString stringWithCString:szMessage encoding:NSUTF8StringEncoding];
+        
+        
         //oncall setup
         if ([onMessageName isEqualToString:@"Do you accept this call?"])
         {
@@ -184,7 +187,7 @@
             //对方挂断时,音视频界面通话界面消失,收到通知时dismiss
             [[NSNotificationCenter defaultCenter] postNotificationName:SWPeerStopCallNotification object:nil];
         }
-    }
+//    }
     return 0;
 }
 
@@ -194,14 +197,14 @@
     InfoBoxType=0;   //呼叫对方
     //收到的消息有1.Peer Cancel Call! 2.Peer Stop Call! 3.Peer Accept Call! 4.Peer Reject Call! 5.Calling...
     SWCallingView *callingView =[SWCallingView shareManager];
-    callingView.peerTerminalName=self.peerTerminalName;
+    
     NSString *onMessageName =[NSString stringWithCString:szMessage encoding:NSUTF8StringEncoding];
     if ([onMessageName isEqualToString:@"Calling..."])
     {
         //显示呼叫界面
         callingView.callDirectType = SWCallOutcomingDirectType;
         callingView.callBackSignal = [RACSubject subject];
-        
+        callingView.peerTerminalName=self.peerTerminalName;
         //点击了取消呼叫
         [callingView.callBackSignal subscribeNext:^(id x) {
             if ([x isEqualToString:SWCancled])
@@ -265,6 +268,7 @@
         [MsgBoxTimer invalidate];
         MsgBoxTimer=nil;
     }
+    
     if (InfoBoxType==1)//oncall 收到呼叫(接听/拒绝)
     {
         ISWCall* pCall=SWUA->GetCall(0);
@@ -310,7 +314,6 @@
 {
     const char* szTerm=ToCStr(_peerTerminalName);
     ITerminal* pTerm=SWUA->AddTerminal(szTerm);//or ITerminal* pTerm=SWUA->GetTerminalByName(szTerm);
-    
 #if 1
     GetApp().StartTalk(pTerm);
     //test create media stream on call accept
@@ -387,6 +390,7 @@
         [[_startVideoButton rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(id x) {
             [self onBtnStartTalk];
             
+            
 #warning 测试代码
 //            SWCommunicationVC *communicationVC =[[SWCommunicationVC alloc] init];
 //            communicationVC.mainViewType=SWVideoMainViewType;
@@ -406,7 +410,8 @@
         [_startAudioButton setImage:[UIImage imageNamed:@"speak"] forState:UIControlStateNormal];
         
         [[_startAudioButton rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(id x) {
-           [self OnBtnStartAudio];
+//           [self OnBtnStartAudio];
+            [MBProgressHUD showError:@"语音对讲暂不可用"];
         }];
     }
     return _startAudioButton;

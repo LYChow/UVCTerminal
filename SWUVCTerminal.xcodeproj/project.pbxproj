@@ -66,12 +66,45 @@
 		F160218F1D9386450053A3C7 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F16021471D9386450053A3C7 /* MBProgressHUD.bundle */; };
 		F16021901D9386450053A3C7 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F16021491D9386450053A3C7 /* MBProgressHUD.m */; };
 		F16021911D9386450053A3C7 /* SWFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F160214C1D9386450053A3C7 /* SWFileManager.m */; };
-		F16021921D9386450053A3C7 /* SWApi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F16021561D9386450053A3C7 /* SWApi.a */; };
 		F16021951D9389BA0053A3C7 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16021941D9389BA0053A3C7 /* AVKit.framework */; };
 		F16021971D9389CA0053A3C7 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16021961D9389C90053A3C7 /* MediaPlayer.framework */; };
 		F16021991D9389D20053A3C7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16021981D9389D20053A3C7 /* AVFoundation.framework */; };
 		F19F742B1D9A14CB002FC57E /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = F19F74291D9A14CB002FC57E /* UIView+Toast.m */; };
+		F1C47AEC1DBF6879009AE438 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C47AEB1DBF6879009AE438 /* CoreMedia.framework */; };
+		F1C47AEE1DBF6883009AE438 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C47AED1DBF6883009AE438 /* AudioToolbox.framework */; };
+		F1DEE8FD1DBF946300592344 /* libSWApi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DEE8F31DBF934F00592344 /* libSWApi.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F1DEE8EF1DBF934F00592344 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1DEE8EB1DBF934F00592344 /* Common.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D7DD4D671C77FB8900A95C0D;
+			remoteInfo = Common;
+		};
+		F1DEE8F21DBF934F00592344 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1DEE8E71DBF934F00592344 /* SWApi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D7DD4D271C77F07800A95C0D;
+			remoteInfo = SWApi;
+		};
+		F1DEE8F51DBF934F00592344 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1DEE8E41DBF934E00592344 /* SWUA.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D7DD4D3C1C77F0EE00A95C0D;
+			remoteInfo = SWUA;
+		};
+		F1DEE8FB1DBF936900592344 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1DEE8F71DBF936900592344 /* SwIMediaLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 34659FF41C2A85680016D4E2;
+			remoteInfo = SwIMediaLib;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0FCC336D9BC48F71C8724030 /* Pods_SWUVCTerminal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SWUVCTerminal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,19 +216,18 @@
 		F16021491D9386450053A3C7 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		F160214B1D9386450053A3C7 /* SWFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFileManager.h; sourceTree = "<group>"; };
 		F160214C1D9386450053A3C7 /* SWFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWFileManager.m; sourceTree = "<group>"; };
-		F16021501D9386450053A3C7 /* IDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDataObject.h; sourceTree = "<group>"; };
-		F16021511D9386450053A3C7 /* IMediaDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMediaDef.h; sourceTree = "<group>"; };
-		F16021521D9386450053A3C7 /* ISWApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISWApi.h; sourceTree = "<group>"; };
-		F16021531D9386450053A3C7 /* ISWMediaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISWMediaController.h; sourceTree = "<group>"; };
-		F16021541D9386450053A3C7 /* ISWUA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISWUA.h; sourceTree = "<group>"; };
-		F16021551D9386450053A3C7 /* typedef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = typedef.h; sourceTree = "<group>"; };
-		F16021561D9386450053A3C7 /* SWApi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = SWApi.a; sourceTree = "<group>"; };
 		F16021931D9388EE0053A3C7 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		F16021941D9389BA0053A3C7 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		F16021961D9389C90053A3C7 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F16021981D9389D20053A3C7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F19F74291D9A14CB002FC57E /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		F19F742A1D9A14CB002FC57E /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		F1C47AEB1DBF6879009AE438 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		F1C47AED1DBF6883009AE438 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F1DEE8E41DBF934E00592344 /* SWUA.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SWUA.xcodeproj; path = SDK/SWUA.xcodeproj; sourceTree = "<group>"; };
+		F1DEE8E71DBF934F00592344 /* SWApi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SWApi.xcodeproj; path = SDK/SWApi.xcodeproj; sourceTree = "<group>"; };
+		F1DEE8EB1DBF934F00592344 /* Common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Common.xcodeproj; path = SDK/Common.xcodeproj; sourceTree = "<group>"; };
+		F1DEE8F71DBF936900592344 /* SwIMediaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwIMediaLib.xcodeproj; path = SDK/MediaLib/SwIMediaLib.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,10 +235,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1DEE8FD1DBF946300592344 /* libSWApi.a in Frameworks */,
+				F1C47AEE1DBF6883009AE438 /* AudioToolbox.framework in Frameworks */,
+				F1C47AEC1DBF6879009AE438 /* CoreMedia.framework in Frameworks */,
 				F16021991D9389D20053A3C7 /* AVFoundation.framework in Frameworks */,
 				F16021971D9389CA0053A3C7 /* MediaPlayer.framework in Frameworks */,
 				F16021951D9389BA0053A3C7 /* AVKit.framework in Frameworks */,
-				F16021921D9386450053A3C7 /* SWApi.a in Frameworks */,
 				AFDFCDCBA0DE6C391C9E0ED6 /* Pods_SWUVCTerminal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,6 +260,8 @@
 		949F8FDEE96BD0B091EADA76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1C47AED1DBF6883009AE438 /* AudioToolbox.framework */,
+				F1C47AEB1DBF6879009AE438 /* CoreMedia.framework */,
 				F16021981D9389D20053A3C7 /* AVFoundation.framework */,
 				F16021961D9389C90053A3C7 /* MediaPlayer.framework */,
 				F16021941D9389BA0053A3C7 /* AVKit.framework */,
@@ -296,6 +332,10 @@
 		F1601FE51D93825F0053A3C7 = {
 			isa = PBXGroup;
 			children = (
+				F1DEE8F71DBF936900592344 /* SwIMediaLib.xcodeproj */,
+				F1DEE8E41DBF934E00592344 /* SWUA.xcodeproj */,
+				F1DEE8E71DBF934F00592344 /* SWApi.xcodeproj */,
+				F1DEE8EB1DBF934F00592344 /* Common.xcodeproj */,
 				F16020C91D9386450053A3C7 /* SWUVCTerminal */,
 				F16021041D9386450053A3C7 /* Info.plist */,
 				F1601FEF1D93825F0053A3C7 /* Products */,
@@ -491,7 +531,6 @@
 				F16021431D9386450053A3C7 /* Marco.h */,
 				F16021441D9386450053A3C7 /* MBProgressHUD */,
 				F160214A1D9386450053A3C7 /* ModelLayer */,
-				F160214E1D9386450053A3C7 /* SWLibs */,
 				F16021931D9388EE0053A3C7 /* Header.h */,
 			);
 			path = Tools;
@@ -560,26 +599,36 @@
 			path = ModelLayer;
 			sourceTree = "<group>";
 		};
-		F160214E1D9386450053A3C7 /* SWLibs */ = {
+		F1DEE8E51DBF934E00592344 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F160214F1D9386450053A3C7 /* include */,
-				F16021561D9386450053A3C7 /* SWApi.a */,
+				F1DEE8F61DBF934F00592344 /* libSWUA.a */,
 			);
-			path = SWLibs;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		F160214F1D9386450053A3C7 /* include */ = {
+		F1DEE8E81DBF934F00592344 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F16021501D9386450053A3C7 /* IDataObject.h */,
-				F16021511D9386450053A3C7 /* IMediaDef.h */,
-				F16021521D9386450053A3C7 /* ISWApi.h */,
-				F16021531D9386450053A3C7 /* ISWMediaController.h */,
-				F16021541D9386450053A3C7 /* ISWUA.h */,
-				F16021551D9386450053A3C7 /* typedef.h */,
+				F1DEE8F31DBF934F00592344 /* libSWApi.a */,
 			);
-			path = include;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1DEE8EC1DBF934F00592344 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1DEE8F01DBF934F00592344 /* libCommon.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1DEE8F81DBF936900592344 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1DEE8FC1DBF936900592344 /* libSwIMediaLib.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -633,12 +682,61 @@
 			mainGroup = F1601FE51D93825F0053A3C7;
 			productRefGroup = F1601FEF1D93825F0053A3C7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F1DEE8EC1DBF934F00592344 /* Products */;
+					ProjectRef = F1DEE8EB1DBF934F00592344 /* Common.xcodeproj */;
+				},
+				{
+					ProductGroup = F1DEE8E81DBF934F00592344 /* Products */;
+					ProjectRef = F1DEE8E71DBF934F00592344 /* SWApi.xcodeproj */;
+				},
+				{
+					ProductGroup = F1DEE8F81DBF936900592344 /* Products */;
+					ProjectRef = F1DEE8F71DBF936900592344 /* SwIMediaLib.xcodeproj */;
+				},
+				{
+					ProductGroup = F1DEE8E51DBF934E00592344 /* Products */;
+					ProjectRef = F1DEE8E41DBF934E00592344 /* SWUA.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F1601FED1D93825F0053A3C7 /* SWUVCTerminal */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F1DEE8F01DBF934F00592344 /* libCommon.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCommon.a;
+			remoteRef = F1DEE8EF1DBF934F00592344 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F1DEE8F31DBF934F00592344 /* libSWApi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSWApi.a;
+			remoteRef = F1DEE8F21DBF934F00592344 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F1DEE8F61DBF934F00592344 /* libSWUA.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSWUA.a;
+			remoteRef = F1DEE8F51DBF934F00592344 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F1DEE8FC1DBF936900592344 /* libSwIMediaLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSwIMediaLib.a;
+			remoteRef = F1DEE8FB1DBF936900592344 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F1601FEC1D93825F0053A3C7 /* Resources */ = {
@@ -823,6 +921,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/Users/hxf/Desktop/WorkPlace/SWUVCTerminal/Common,
+					/Users/hxf/Desktop/WorkPlace/SWUVCTerminal/SWUA,
+					/Users/hxf/Desktop/WorkPlace/SWUVCTerminal/SWApi,
+					/Users/hxf/Desktop/WorkPlace/SWUVCTerminal/MediaLib/include/IMedia,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -865,6 +969,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/Users/hxf/Desktop/WorkPlace/SWUVCTerminal/Common,
+					/Users/hxf/Desktop/WorkPlace/SWUVCTerminal/SWUA,
+					/Users/hxf/Desktop/WorkPlace/SWUVCTerminal/SWApi,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -884,6 +993,16 @@
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Tools/Header.h";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${SRCROOT}/SDK/Common\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${SRCROOT}/SDK/SWUA\"",
+					"\"${SRCROOT}/SDK/SWApi\"",
+					"\"${SRCROOT}/SDK/MediaLib/include/IMedia\"",
+				);
 				INFOPLIST_FILE = SWUVCTerminal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -891,7 +1010,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SWUVCTerminal/Tools/SWLibs",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sinowave.SWUVCTerminal;
+				PRODUCT_BUNDLE_IDENTIFIER = sinowave.SWUVCTerminal1;
 				PRODUCT_NAME = "UVC会议终端";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -910,6 +1029,16 @@
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Tools/Header.h";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/hxf/Desktop/WorkPlace/SWUVCTerminal/Common,
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					/Users/hxf/Desktop/WorkPlace/SWUVCTerminal/SWUA,
+					/Users/hxf/Desktop/WorkPlace/SWUVCTerminal/SWApi,
+					/Users/hxf/Desktop/WorkPlace/SWUVCTerminal/MediaLib/include/IMedia,
+				);
 				INFOPLIST_FILE = SWUVCTerminal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -918,7 +1047,7 @@
 					"$(PROJECT_DIR)/SWUVCTerminal/Tools/SWLibs",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = sinowave.SWUVCTerminal;
+				PRODUCT_BUNDLE_IDENTIFIER = sinowave.SWUVCTerminal1;
 				PRODUCT_NAME = "UVC会议终端";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

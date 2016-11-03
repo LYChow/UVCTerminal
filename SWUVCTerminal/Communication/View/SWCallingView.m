@@ -7,7 +7,7 @@
 //
 
 #import "SWCallingView.h"
-
+#import "SWSetting.h"
 @interface SWCallingView()
 {
 
@@ -183,6 +183,17 @@ static SWCallingView *callingView=nil;
             }
             
         }];
+        
+        //延迟1s自动应答
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //自动应答的逻辑
+            if ([[SWSetting setting].isAutoAccept boolValue] &&self.callBackSignal)
+            {
+                 [self hidden];
+                [_callBackSignal sendNext:SWAccept];
+            }
+        });
+        
     }
     return _acceptButton;
 }
@@ -226,5 +237,12 @@ static SWCallingView *callingView=nil;
     }
     return _keyWindow;
 }
+
+-(void)setPeerTerminalName:(NSString *)peerTerminalName
+{
+    _peerTerminalName= peerTerminalName;
+     _userInfoLabel.text=self.peerTerminalName.length?self.peerTerminalName:@"unknown";
+}
+
 
 @end

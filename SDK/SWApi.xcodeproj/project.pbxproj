@@ -1,0 +1,327 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D7D9A18F1D0E35FB00F2C379 /* libSwIMediaLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D9A18E1D0E35D900F2C379 /* libSwIMediaLib.a */; };
+		D7DD4DA41C7805D200A95C0D /* SWApi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7DD4DA11C7805D200A95C0D /* SWApi.cpp */; };
+		D7DD4DA61C78AD6C00A95C0D /* libCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7DD4DA51C78AD6C00A95C0D /* libCommon.a */; };
+		D7DD4DA81C78AD7200A95C0D /* libSWUA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7DD4DA71C78AD7200A95C0D /* libSWUA.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D7D9A18D1D0E35D900F2C379 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7D9A1891D0E35D900F2C379 /* SwIMediaLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 34659FF41C2A85680016D4E2;
+			remoteInfo = SwIMediaLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D7DD4D251C77F07800A95C0D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D7D9A1891D0E35D900F2C379 /* SwIMediaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwIMediaLib.xcodeproj; path = MediaLib/SwIMediaLib.xcodeproj; sourceTree = "<group>"; };
+		D7DD4D271C77F07800A95C0D /* libSWApi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSWApi.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7DD4DA01C7805D200A95C0D /* ISWApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISWApi.h; sourceTree = "<group>"; };
+		D7DD4DA11C7805D200A95C0D /* SWApi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SWApi.cpp; sourceTree = "<group>"; };
+		D7DD4DA21C7805D200A95C0D /* SWApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWApi.h; sourceTree = "<group>"; };
+		D7DD4DA31C7805D200A95C0D /* SWApiDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWApiDef.h; sourceTree = "<group>"; };
+		D7DD4DA51C78AD6C00A95C0D /* libCommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCommon.a; path = "../Library/Developer/Xcode/DerivedData/SinoVC-gquvwdwagpcypfgcqcvskeclgpvv/Build/Products/Debug-iphoneos/libCommon.a"; sourceTree = "<group>"; };
+		D7DD4DA71C78AD7200A95C0D /* libSWUA.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSWUA.a; path = "../Library/Developer/Xcode/DerivedData/SinoVC-gquvwdwagpcypfgcqcvskeclgpvv/Build/Products/Debug-iphoneos/libSWUA.a"; sourceTree = "<group>"; };
+		D7DD4DAA1C79393F00A95C0D /* ISWMediaController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISWMediaController.h; sourceTree = "<group>"; };
+		D7FC5BAF1C892AB00044EB89 /* libSwIMediaLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSwIMediaLib.a; path = "../Library/Developer/Xcode/DerivedData/SinoVC-aevbcvhhlatipbhikvbdupqvcrtr/Build/Products/Debug-iphoneos/libSwIMediaLib.a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D7DD4D241C77F07800A95C0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7D9A18F1D0E35FB00F2C379 /* libSwIMediaLib.a in Frameworks */,
+				D7DD4DA81C78AD7200A95C0D /* libSWUA.a in Frameworks */,
+				D7DD4DA61C78AD6C00A95C0D /* libCommon.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D7D9A18A1D0E35D900F2C379 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7D9A18E1D0E35D900F2C379 /* libSwIMediaLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7DD4D1E1C77F07800A95C0D = {
+			isa = PBXGroup;
+			children = (
+				D7D9A1891D0E35D900F2C379 /* SwIMediaLib.xcodeproj */,
+				D7DD4DA91C78ADCB00A95C0D /* Framework */,
+				D7DD4D291C77F07800A95C0D /* SWApi */,
+				D7DD4D281C77F07800A95C0D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D7DD4D281C77F07800A95C0D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7DD4D271C77F07800A95C0D /* libSWApi.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7DD4D291C77F07800A95C0D /* SWApi */ = {
+			isa = PBXGroup;
+			children = (
+				D7DD4DAA1C79393F00A95C0D /* ISWMediaController.h */,
+				D7DD4DA01C7805D200A95C0D /* ISWApi.h */,
+				D7DD4DA21C7805D200A95C0D /* SWApi.h */,
+				D7DD4DA11C7805D200A95C0D /* SWApi.cpp */,
+				D7DD4DA31C7805D200A95C0D /* SWApiDef.h */,
+			);
+			path = SWApi;
+			sourceTree = "<group>";
+		};
+		D7DD4DA91C78ADCB00A95C0D /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				D7FC5BAF1C892AB00044EB89 /* libSwIMediaLib.a */,
+				D7DD4DA71C78AD7200A95C0D /* libSWUA.a */,
+				D7DD4DA51C78AD6C00A95C0D /* libCommon.a */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D7DD4D261C77F07800A95C0D /* SWApi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7DD4D301C77F07900A95C0D /* Build configuration list for PBXNativeTarget "SWApi" */;
+			buildPhases = (
+				D7DD4D231C77F07800A95C0D /* Sources */,
+				D7DD4D241C77F07800A95C0D /* Frameworks */,
+				D7DD4D251C77F07800A95C0D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SWApi;
+			productName = SWApi;
+			productReference = D7DD4D271C77F07800A95C0D /* libSWApi.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7DD4D1F1C77F07800A95C0D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = sinowave;
+				TargetAttributes = {
+					D7DD4D261C77F07800A95C0D = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = EVGMKBFAM8;
+					};
+				};
+			};
+			buildConfigurationList = D7DD4D221C77F07800A95C0D /* Build configuration list for PBXProject "SWApi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D7DD4D1E1C77F07800A95C0D;
+			productRefGroup = D7DD4D281C77F07800A95C0D /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D7D9A18A1D0E35D900F2C379 /* Products */;
+					ProjectRef = D7D9A1891D0E35D900F2C379 /* SwIMediaLib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D7DD4D261C77F07800A95C0D /* SWApi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D7D9A18E1D0E35D900F2C379 /* libSwIMediaLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSwIMediaLib.a;
+			remoteRef = D7D9A18D1D0E35D900F2C379 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D7DD4D231C77F07800A95C0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7DD4DA41C7805D200A95C0D /* SWApi.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D7DD4D2E1C77F07900A95C0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D7DD4D2F1C77F07900A95C0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D7DD4D311C77F07900A95C0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					./Media,
+					./Common,
+					./SWUA,
+				);
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+			};
+			name = Debug;
+		};
+		D7DD4D321C77F07900A95C0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					./Media,
+					./Common,
+					./SWUA,
+				);
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D7DD4D221C77F07800A95C0D /* Build configuration list for PBXProject "SWApi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7DD4D2E1C77F07900A95C0D /* Debug */,
+				D7DD4D2F1C77F07900A95C0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7DD4D301C77F07900A95C0D /* Build configuration list for PBXNativeTarget "SWApi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7DD4D311C77F07900A95C0D /* Debug */,
+				D7DD4D321C77F07900A95C0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D7DD4D1F1C77F07800A95C0D /* Project object */;
+}

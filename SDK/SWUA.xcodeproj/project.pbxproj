@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D7CF50B41D05A1D800BAE3A4 /* ISWUA.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7DD4D4C1C77F90C00A95C0D /* ISWUA.h */; };
+		D7DD4D571C77F90C00A95C0D /* GenericCallProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7DD4D481C77F90C00A95C0D /* GenericCallProtocol.cpp */; };
+		D7DD4D581C77F90C00A95C0D /* ISWCall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7DD4D4A1C77F90C00A95C0D /* ISWCall.cpp */; };
+		D7DD4D591C77F90C00A95C0D /* MVSProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7DD4D4D1C77F90C00A95C0D /* MVSProtocol.cpp */; };
+		D7DD4D5A1C77F90C00A95C0D /* SendCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7DD4D501C77F90C00A95C0D /* SendCommand.cpp */; };
+		D7DD4D5B1C77F90C00A95C0D /* SWUA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7DD4D521C77F90C00A95C0D /* SWUA.cpp */; };
+		D7DD4D5D1C77F90C00A95C0D /* TermInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7DD4D551C77F90C00A95C0D /* TermInfo.cpp */; };
+		D7DD4D9E1C78009300A95C0D /* libCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7DD4D9D1C78009300A95C0D /* libCommon.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D7DD4D3A1C77F0EE00A95C0D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				D7CF50B41D05A1D800BAE3A4 /* ISWUA.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D7DD4D3C1C77F0EE00A95C0D /* libSWUA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSWUA.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7DD4D481C77F90C00A95C0D /* GenericCallProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenericCallProtocol.cpp; sourceTree = "<group>"; };
+		D7DD4D491C77F90C00A95C0D /* GenericCallProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericCallProtocol.h; sourceTree = "<group>"; };
+		D7DD4D4A1C77F90C00A95C0D /* ISWCall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ISWCall.cpp; sourceTree = "<group>"; };
+		D7DD4D4B1C77F90C00A95C0D /* ISWCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISWCall.h; sourceTree = "<group>"; };
+		D7DD4D4C1C77F90C00A95C0D /* ISWUA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISWUA.h; sourceTree = "<group>"; };
+		D7DD4D4D1C77F90C00A95C0D /* MVSProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MVSProtocol.cpp; sourceTree = "<group>"; };
+		D7DD4D4E1C77F90C00A95C0D /* MVSProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVSProtocol.h; sourceTree = "<group>"; };
+		D7DD4D4F1C77F90C00A95C0D /* NodeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeInfo.h; sourceTree = "<group>"; };
+		D7DD4D501C77F90C00A95C0D /* SendCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SendCommand.cpp; sourceTree = "<group>"; };
+		D7DD4D511C77F90C00A95C0D /* SendCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendCommand.h; sourceTree = "<group>"; };
+		D7DD4D521C77F90C00A95C0D /* SWUA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SWUA.cpp; sourceTree = "<group>"; };
+		D7DD4D531C77F90C00A95C0D /* SWUA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUA.h; sourceTree = "<group>"; };
+		D7DD4D551C77F90C00A95C0D /* TermInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TermInfo.cpp; sourceTree = "<group>"; };
+		D7DD4D561C77F90C00A95C0D /* TermInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermInfo.h; sourceTree = "<group>"; };
+		D7DD4D9D1C78009300A95C0D /* libCommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCommon.a; path = "../Library/Developer/Xcode/DerivedData/SinoVC-gquvwdwagpcypfgcqcvskeclgpvv/Build/Products/Debug-iphoneos/libCommon.a"; sourceTree = "<group>"; };
+		D7DD4D9F1C78041200A95C0D /* __PCH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = __PCH.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D7DD4D391C77F0EE00A95C0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7DD4D9E1C78009300A95C0D /* libCommon.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D7DD4D331C77F0EE00A95C0D = {
+			isa = PBXGroup;
+			children = (
+				D7DD4D9D1C78009300A95C0D /* libCommon.a */,
+				D7DD4D3E1C77F0EE00A95C0D /* SWUA */,
+				D7DD4D3D1C77F0EE00A95C0D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D7DD4D3D1C77F0EE00A95C0D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7DD4D3C1C77F0EE00A95C0D /* libSWUA.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7DD4D3E1C77F0EE00A95C0D /* SWUA */ = {
+			isa = PBXGroup;
+			children = (
+				D7DD4D481C77F90C00A95C0D /* GenericCallProtocol.cpp */,
+				D7DD4D491C77F90C00A95C0D /* GenericCallProtocol.h */,
+				D7DD4D4A1C77F90C00A95C0D /* ISWCall.cpp */,
+				D7DD4D4B1C77F90C00A95C0D /* ISWCall.h */,
+				D7DD4D4C1C77F90C00A95C0D /* ISWUA.h */,
+				D7DD4D4D1C77F90C00A95C0D /* MVSProtocol.cpp */,
+				D7DD4D4E1C77F90C00A95C0D /* MVSProtocol.h */,
+				D7DD4D4F1C77F90C00A95C0D /* NodeInfo.h */,
+				D7DD4D501C77F90C00A95C0D /* SendCommand.cpp */,
+				D7DD4D511C77F90C00A95C0D /* SendCommand.h */,
+				D7DD4D521C77F90C00A95C0D /* SWUA.cpp */,
+				D7DD4D531C77F90C00A95C0D /* SWUA.h */,
+				D7DD4D551C77F90C00A95C0D /* TermInfo.cpp */,
+				D7DD4D561C77F90C00A95C0D /* TermInfo.h */,
+				D7DD4D9F1C78041200A95C0D /* __PCH.h */,
+			);
+			path = SWUA;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D7DD4D3B1C77F0EE00A95C0D /* SWUA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7DD4D451C77F0EE00A95C0D /* Build configuration list for PBXNativeTarget "SWUA" */;
+			buildPhases = (
+				D7DD4D381C77F0EE00A95C0D /* Sources */,
+				D7DD4D391C77F0EE00A95C0D /* Frameworks */,
+				D7DD4D3A1C77F0EE00A95C0D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SWUA;
+			productName = SWUA;
+			productReference = D7DD4D3C1C77F0EE00A95C0D /* libSWUA.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7DD4D341C77F0EE00A95C0D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = sinowave;
+				TargetAttributes = {
+					D7DD4D3B1C77F0EE00A95C0D = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = EVGMKBFAM8;
+					};
+				};
+			};
+			buildConfigurationList = D7DD4D371C77F0EE00A95C0D /* Build configuration list for PBXProject "SWUA" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D7DD4D331C77F0EE00A95C0D;
+			productRefGroup = D7DD4D3D1C77F0EE00A95C0D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D7DD4D3B1C77F0EE00A95C0D /* SWUA */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D7DD4D381C77F0EE00A95C0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7DD4D5D1C77F90C00A95C0D /* TermInfo.cpp in Sources */,
+				D7DD4D571C77F90C00A95C0D /* GenericCallProtocol.cpp in Sources */,
+				D7DD4D5A1C77F90C00A95C0D /* SendCommand.cpp in Sources */,
+				D7DD4D581C77F90C00A95C0D /* ISWCall.cpp in Sources */,
+				D7DD4D591C77F90C00A95C0D /* MVSProtocol.cpp in Sources */,
+				D7DD4D5B1C77F90C00A95C0D /* SWUA.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D7DD4D431C77F0EE00A95C0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D7DD4D441C77F0EE00A95C0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D7DD4D461C77F0EE00A95C0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = ./Common;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+			};
+			name = Debug;
+		};
+		D7DD4D471C77F0EE00A95C0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = ./Common;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D7DD4D371C77F0EE00A95C0D /* Build configuration list for PBXProject "SWUA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7DD4D431C77F0EE00A95C0D /* Debug */,
+				D7DD4D441C77F0EE00A95C0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7DD4D451C77F0EE00A95C0D /* Build configuration list for PBXNativeTarget "SWUA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7DD4D461C77F0EE00A95C0D /* Debug */,
+				D7DD4D471C77F0EE00A95C0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D7DD4D341C77F0EE00A95C0D /* Project object */;
+}

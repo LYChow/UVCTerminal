@@ -29,8 +29,6 @@
     [Fabric with:@[[Crashlytics class]]];
     // TODO: Move this to where you establish a user session
 //    [self logUser];
-
-    
     return YES;
 }
 
